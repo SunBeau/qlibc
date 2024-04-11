@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
 
       matrix:
-        os: [ubuntu-latest, ubuntu-22.04, ubuntu-20.04, ubuntu-18.04]
+        os: [ubuntu-latest, ubuntu-22.04, ubuntu-20.04]
         build_type: [Release]
         c_compiler: [gcc, clang]
 
@@ -69,7 +69,7 @@ jobs:
     - name: Intall Deps
       run: |
         apt-get update
-        apt-get install -y build-essential
+        apt-get install -y build-essential cmake
 
     - name: Configure CMake And Build
       working-directory: ${{ github.workspace }}
