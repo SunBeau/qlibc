@@ -68,6 +68,7 @@ jobs:
 
     - name: Intall Deps
       run: |
+        apt-get update
         apt-get install -y build-essential
 
     - name: Configure CMake And Build
