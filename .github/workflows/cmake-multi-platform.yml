@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
 
       matrix:
-        os: [ubuntu-latest, ubuntu-22.04, ubuntu-20.04]
+        os: [ubuntu-latest, ubuntu-22.04, ubuntu-20.04, ubuntu-18.04]
         build_type: [Release]
         c_compiler: [gcc, clang]
 
@@ -51,7 +51,7 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
 
-  build:
+  build-test-on-centos7:
     name: centos:7-latest
     runs-on: ubuntu-latest
     container: docker.io/centos:7
@@ -65,7 +65,7 @@ jobs:
 
     - name: intall deps
       run: |
-        yum install -y wget tar gcc automake autoconf libtool make cmake
+        yum install -y wget tar gcc automake autoconf libtool make
 
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
