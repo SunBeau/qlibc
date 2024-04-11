@@ -54,7 +54,10 @@ jobs:
   build-test-on-centos7:
     name: centos:7-latest
     runs-on: ubuntu-latest
-    container: docker.io/centos:7
+    container:
+      image: docker.io/centos:7
+      volumes:
+        - ${{ github.workspace }}
 
     strategy:
       # Set fail-fast to false to ensure that feedback is delivered for all matrix combinations. Consider changing this to true when your workflow is stable.
@@ -93,4 +96,3 @@ jobs:
       # Execute tests defined by the CMake configuration. Note that --build-config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
-
