@@ -101,3 +101,6 @@ INSTALL(TARGETS   qlibc           LIBRARY DESTINATION lib)
 INSTALL(TARGETS   qlibcext        LIBRARY DESTINATION lib)
 INSTALL(TARGETS   qlibc-static    ARCHIVE DESTINATION lib)
 INSTALL(TARGETS   qlibcext-static ARCHIVE DESTINATION lib)
+
+enable_testing()
+add_test(NAME Test COMMAND make -C ${qlibc_SOURCE_DIR}/tests test)
