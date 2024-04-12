@@ -176,3 +176,33 @@ jobs:
       working-directory: ${{ github.workspace }}
       run: |
         echo "TODO"
+
+  build-test-on-centos-701406:
+    name: build-test-on-centos-7.0.1406
+    runs-on: ubuntu-latest
+    container:
+      image: docker.io/centos:7.0.1406
+      volumes:
+        - ${{ github.workspace }}:${{ github.workspace }}
+
+    strategy:
+      # Set fail-fast to false to ensure that feedback is delivered for all matrix combinations. Consider changing this to true when your workflow is stable.
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Intall Deps
+      run: |
+        yum install -y wget tar gcc automake autoconf libtool make cmake
+
+    - name: Configure CMake And Build
+      working-directory: ${{ github.workspace }}
+      run: |
+        mkdir build && cd build
+        cmake .. && make && make install
+
+    - name: Test
+      working-directory: ${{ github.workspace }}
+      run: |
+        echo "TODO"
