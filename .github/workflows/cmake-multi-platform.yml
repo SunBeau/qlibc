@@ -39,8 +39,9 @@ jobs:
         cmake .. && make && make install
 
     - name: Test
-      working-directory: ${{ github.workspace }}/build
+      working-directory: ${{ github.workspace }}
       run: |
+        cd build
         make test
 
   test-on-ubuntu-2004:
@@ -70,8 +71,9 @@ jobs:
         cmake .. && make && make install
 
     - name: Test
-      working-directory: ${{ github.workspace }}/build
+      working-directory: ${{ github.workspace }}
       run: |
+        cd build
         make test
 
   test-on-ubuntu-1804:
@@ -101,8 +103,9 @@ jobs:
         cmake .. && make && make install
 
     - name: Test
-      working-directory: ${{ github.workspace }}/build
+      working-directory: ${{ github.workspace }}
       run: |
+        cd build
         make test
 
   test-on-centos-792009:
@@ -131,8 +134,9 @@ jobs:
         cmake .. && make && make install
 
     - name: Test
-      working-directory: ${{ github.workspace }}/build
+      working-directory: ${{ github.workspace }}
       run: |
+        cd build
         make test
 
   test-on-centos-731611:
@@ -161,6 +165,7 @@ jobs:
         cmake .. && make && make install
 
     - name: Test
-      working-directory: ${{ github.workspace }}/build
+      working-directory: ${{ github.workspace }}
       run: |
+        cd build
         make test
