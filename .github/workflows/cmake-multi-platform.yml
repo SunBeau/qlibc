@@ -164,7 +164,7 @@ jobs:
 
     - name: Intall Deps
       run: |
-        yum install -y wget tar gcc automake autoconf libtool make cmake
+        yum install -y gcc make cmake
 
     - name: Configure CMake And Build
       working-directory: ${{ github.workspace }}
@@ -194,7 +194,7 @@ jobs:
 
     - name: Intall Deps
       run: |
-        yum install -y wget tar gcc automake autoconf libtool make cmake
+        yum install -y gcc make cmake
 
     - name: Configure CMake And Build
       working-directory: ${{ github.workspace }}
