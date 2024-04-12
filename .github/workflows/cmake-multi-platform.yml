@@ -122,7 +122,7 @@ jobs:
 
     - name: Intall Deps
       run: |
-        yum install -y wget tar automake autoconf libtool gcc make cmake
+        yum install -y gcc make cmake
 
     - name: Configure CMake And Build
       working-directory: ${{ github.workspace }}
@@ -135,11 +135,11 @@ jobs:
       run: |
         echo "TODO"
 
-  build-test-on-centos-701406:
-    name: build-test-on-centos-7.0.1406
+  build-test-on-centos-731611:
+    name: build-test-on-centos-7.3.1611
     runs-on: ubuntu-latest
     container:
-      image: docker.io/centos:7.0.1406
+      image: docker.io/centos:7.3.1611
       volumes:
         - ${{ github.workspace }}:${{ github.workspace }}
 
@@ -152,7 +152,7 @@ jobs:
 
     - name: Intall Deps
       run: |
-        yum install -y wget tar automake autoconf libtool gcc make cmake
+        yum install -y gcc make cmake
 
     - name: Configure CMake And Build
       working-directory: ${{ github.workspace }}
