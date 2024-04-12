@@ -147,7 +147,7 @@ jobs:
       run: |
         echo "TODO"
 
-  build-test-on-centos-7.9.2009:
+  build-test-on-centos-792009:
     name: build-test-on-centos-7.9.2009
     runs-on: ubuntu-latest
     container:
