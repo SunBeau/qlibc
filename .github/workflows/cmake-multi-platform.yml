@@ -12,8 +12,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-test-on-ubuntu-2204:
-    name: build-test-on-ubuntu-22.04
+  test-on-ubuntu-2204:
+    name: test-on-ubuntu-22.04
     runs-on: ubuntu-latest
     container:
       image: docker.io/ubuntu:22.04
@@ -43,8 +43,8 @@ jobs:
       run: |
         echo "TODO"
 
-  build-test-on-ubuntu-2004:
-    name: build-test-on-ubuntu-20.04
+  test-on-ubuntu-2004:
+    name: test-on-ubuntu-20.04
     runs-on: ubuntu-latest
     container:
       image: docker.io/ubuntu:20.04
@@ -74,8 +74,8 @@ jobs:
       run: |
         echo "TODO"
 
-  build-test-on-ubuntu-1804:
-    name: build-test-on-ubuntu-18.04
+  test-on-ubuntu-1804:
+    name: test-on-ubuntu-18.04
     runs-on: ubuntu-latest
     container:
       image: docker.io/ubuntu:18.04
@@ -105,8 +105,8 @@ jobs:
       run: |
         echo "TODO"
 
-  build-test-on-centos-792009:
-    name: build-test-on-centos-7.9.2009
+  test-on-centos-792009:
+    name: test-on-centos-7.9.2009
     runs-on: ubuntu-latest
     container:
       image: docker.io/centos:7.9.2009
@@ -135,8 +135,8 @@ jobs:
       run: |
         echo "TODO"
 
-  build-test-on-centos-731611:
-    name: build-test-on-centos-7.3.1611
+  test-on-centos-731611:
+    name: test-on-centos-7.3.1611
     runs-on: ubuntu-latest
     container:
       image: docker.io/centos:7.3.1611
