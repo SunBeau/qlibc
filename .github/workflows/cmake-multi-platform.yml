@@ -72,7 +72,7 @@ jobs:
     - name: Intall Deps
       run: |
         apt-get update
-        apt-get install -y build-essential cmake
+        apt-get install -y gcc make cmake
 
     - name: Configure CMake And Build
       working-directory: ${{ github.workspace }}
