@@ -69,7 +69,7 @@ test-ext:	ext
 	@./launcher.sh ${TARGETS_EXT}
 
 test_qdatabase_pgsql: test_qdatabase_pgsql.o
-	${CC} -o $@ test_qdatabase_pgsql.o ${LIBQLIBC} ${LIBQLIBCEXT} ${CFLAGS} ${CPPFLAGS}
+	${CC} ${CFLAGS} ${CPPFLAGS} -o $@ test_qdatabase_pgsql.o ${LIBQLIBCEXT} ${LIBQLIBC}
 
 test_qstring: test_qstring.o
 	${CC} ${CFLAGS} ${CPPFLAGS} -o $@ test_qstring.o ${LIBQLIBC}
