@@ -68,3 +68,21 @@ jobs:
         cd tests/
         make test
         make test-ext
+        make clean
+        cd ../
+        make clean
+
+    - name: Cmake And make
+      working-directory: ${{ github.workspace }}
+      run: |
+        mkdir build/ && cd build/
+        cmake .. \
+        -DWITH_PGSQL=ON \
+        -DWITH_PGSQL_INCLUDE_DIR=/usr/include/postgresql \
+        -DWITH_PGSQL_LIBRARY_DIR=/usr/lib/x86_64-linux-gnu
+
+    - name: Cmake Test
+      working-directory: ${{ github.workspace }}
+      run: |
+        cd build/
+        make test
